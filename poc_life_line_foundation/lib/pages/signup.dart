@@ -1,14 +1,16 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:poc_life_line_foundation/pages/medical_camps.dart';
 import 'package:poc_life_line_foundation/widgets/app_bar.dart';
 
-class Textfield extends StatefulWidget {
-  const Textfield({Key? key}) : super(key: key);
+class SignUp extends StatefulWidget {
+  const SignUp({Key? key}) : super(key: key);
 
   @override
-  State<Textfield> createState() => _TextfieldState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _TextfieldState extends State<Textfield> {
+class _SignUpState extends State<SignUp> {
   final email = TextEditingController();
   final password = TextEditingController();
   @override
@@ -34,7 +36,7 @@ class _TextfieldState extends State<Textfield> {
                       borderSide:
                           BorderSide(width: 2.0, style: BorderStyle.solid))),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20.0,
             ),
             TextFormField(
@@ -82,13 +84,17 @@ class _TextfieldState extends State<Textfield> {
                           BorderSide(width: 2.0, style: BorderStyle.solid)),
                   suffixIcon: Icon(Icons.lock)),
             ),
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => AppAndTabBarWidget()));
-                print(email.text.toString());
-                print(password.text.toString());
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => MedicalCamps()));
+                if (kDebugMode) {
+                  print(email.text.toString());
+                }
+                if (kDebugMode) {
+                  print(password.text.toString());
+                }
               },
               child: const Text("Signup"),
             )

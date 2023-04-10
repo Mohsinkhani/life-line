@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:poc_life_line_foundation/pages/medical_camps.dart';
 import 'package:poc_life_line_foundation/pages/viewall.dart';
 
 import '../pages/surgeries.dart';
 
+class data {}
+
 class AppAndTabBarWidget extends StatelessWidget {
-  int _index = 0;
+  final int _index = 0;
+
   var colors = [
     Colors.red,
     Colors.blue,
@@ -14,11 +18,21 @@ class AppAndTabBarWidget extends StatelessWidget {
   ];
 
   final allCases = [
-    {'name': 'Surgeries', 'color': 'red'},
-    {'name': 'Medical Camps', 'color': 'red'},
-    {'name': 'Medical Procedures', 'color': 'red'},
-    {'name': 'Expenses', 'color': 'red'},
-    {'name': 'Zakat', 'color': 'red'},
+    {
+      'name': 'Surgeries',
+    },
+    {
+      'name': 'Medical Camps',
+    },
+    {
+      'name': 'Medical Procedures',
+    },
+    {
+      'name': 'Expenses',
+    },
+    {
+      'name': 'Zakat',
+    },
   ];
 
   final achievements = [
@@ -30,6 +44,11 @@ class AppAndTabBarWidget extends StatelessWidget {
     {'amount': 1234, 'detail': 'surgeries'},
     {'amount': 1234, 'detail': 'surgeries'},
   ];
+  List<Route> myRoute = [
+    MaterialPageRoute(builder: (_) => SurgeriesPage()),
+    MaterialPageRoute(builder: (_) => MedicalCamps()),
+  ];
+  AppAndTabBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +102,7 @@ class AppAndTabBarWidget extends StatelessWidget {
                 // margin: EdgeInsets.all(10.10),
               ),
               ListTile(
-                leading: Icon(Icons.login),
+                leading: const Icon(Icons.login),
                 title: const Text('Login'),
                 onTap: () {
                   // Update the state of the app
@@ -93,14 +112,14 @@ class AppAndTabBarWidget extends StatelessWidget {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.category),
+                leading: const Icon(Icons.category),
                 title: const Text("Categories"),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
-                leading: Icon(Icons.help),
+                leading: const Icon(Icons.help),
                 title: const Text("How it Works"),
                 onTap: () {
                   Navigator.pop(context);
@@ -114,14 +133,14 @@ class AppAndTabBarWidget extends StatelessWidget {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.switch_access_shortcut_add_outlined),
+                leading: const Icon(Icons.switch_access_shortcut_add_outlined),
                 title: const Text("Tell Your Friends"),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
-                leading: Icon(Icons.currency_exchange_rounded),
+                leading: const Icon(Icons.currency_exchange_rounded),
                 title: const Text('Change Currency'),
                 onTap: () {
                   // Update the state of the app
@@ -153,7 +172,8 @@ class AppAndTabBarWidget extends StatelessWidget {
                                   onPressed: () {
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
-                                            builder: (context) => view()));
+                                            builder: (context) =>
+                                                const view()));
                                   },
                                   child: const Text('View All'))
                             ]),
@@ -163,7 +183,7 @@ class AppAndTabBarWidget extends StatelessWidget {
                               scrollDirection: Axis.horizontal,
                               itemBuilder: (BuildContext context, int index) {
                                 final item = achievements[index];
-                                return Container(
+                                return SizedBox(
                                   height: 50,
                                   width: 120,
                                   child: Card(
@@ -177,13 +197,13 @@ class AppAndTabBarWidget extends StatelessWidget {
                                         children: <Widget>[
                                           Text(
                                             item['amount'].toString(),
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                               fontSize: 20,
                                               fontWeight: FontWeight.bold,
                                               color: Colors.green,
                                             ),
                                           ),
-                                          Text('detail'),
+                                          const Text('detail'),
                                         ]),
                                   )),
                                 );
@@ -191,24 +211,25 @@ class AppAndTabBarWidget extends StatelessWidget {
                         )
                       ],
                     )),
-
                 Expanded(
                   child: ListView.builder(
                       itemCount: allCases.length,
                       scrollDirection: Axis.vertical,
                       itemBuilder: (BuildContext context, int index) {
                         final item = allCases[index];
-                        return Container(
+                        return SizedBox(
                             height: 150,
                             width: MediaQuery.of(context).size.width,
                             child: InkWell(
                               onTap: () => {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const SurgeriesPage()),
-                                )
+                                Navigator.of(context).push(myRoute[index]),
+
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //       builder: (context) =>
+
+                                // )
                               },
                               child: Card(
                                   color: colors[index],
@@ -226,129 +247,12 @@ class AppAndTabBarWidget extends StatelessWidget {
                             ));
                       }),
                 )
-                // child: ListView(
-                //   scrollDirection: Axis.vertical,
-                //   children: <Widget>[
-                //     SizedBox(
-                //         width: MediaQuery.of(context).size.width,
-                //         height: 150,
-                //         child: InkWell(
-                //           onTap: () => {
-                //             Navigator.push(
-                //               context,
-                //               MaterialPageRoute(
-                //                   builder: (context) =>
-                //                       const SurgeriesPage()),
-                //             )
-                //           },
-                //           child: Card(
-                //               color: Colors.teal,
-                //               child: Container(
-                //                 padding: const EdgeInsets.all(8),
-                //                 child: Column(
-                //                     mainAxisAlignment:
-                //                         MainAxisAlignment.start,
-                //                     crossAxisAlignment:
-                //                         CrossAxisAlignment.start,
-                //                     children: const <Widget>[
-                //                       Text('Surgeries')
-                //                     ]),
-                //               )),
-                //         )),
-                //     // width: 160.0,
-                //     // color: Colors.red,
-                //     space,
-                //     SizedBox(
-                //         width: MediaQuery.of(context).size.width,
-                //         height: 150,
-                //         child: InkWell(
-                //           onTap: () => {
-                //             Navigator.push(
-                //               context,
-                //               MaterialPageRoute(
-                //                   builder: (context) =>
-                //                       const StackUnderstanding()),
-                //             )
-                //           },
-                //           child: Card(
-                //             color: Colors.amber[200],
-                //             child: Column(
-                //                 mainAxisAlignment: MainAxisAlignment.start,
-                //                 crossAxisAlignment: CrossAxisAlignment.start,
-                //                 children: const <Widget>[
-                //                   Text(
-                //                     'Medical Camps',
-                //                     style: (TextStyle(
-                //                         fontWeight: FontWeight.bold,
-                //                         fontSize: 20)),
-                //                   ),
-                //                 ]),
-                //           ),
-                //         )),
-
-                //     space,
-                //     SizedBox(
-                //         width: MediaQuery.of(context).size.width,
-                //         height: 150,
-                //         child: InkWell(
-                //           onTap: () => {
-                //             Navigator.push(
-                //               context,
-                //               MaterialPageRoute(
-                //                   builder: (context) =>
-                //                       const StackUnderstanding()),
-                //             )
-                //           },
-                //           child: Card(
-                //             color: Colors.purple[200],
-                //             child: Column(
-                //                 mainAxisAlignment: MainAxisAlignment.start,
-                //                 crossAxisAlignment: CrossAxisAlignment.start,
-                //                 children: const <Widget>[
-                //                   Text(
-                //                     'Medical Procedure',
-                //                     style: (TextStyle(
-                //                         fontWeight: FontWeight.bold,
-                //                         fontSize: 20)),
-                //                   ),
-                //                 ]),
-                //           ),
-                //         )),
-
-                //     space,
-                //     SizedBox(
-                //       width: MediaQuery.of(context).size.width,
-                //       height: 150,
-                //       child: InkWell(
-                //         onTap: () => {
-                //           Navigator.push(context,
-                //               MaterialPageRoute(builder: (context) => Bar()))
-                //         },
-                //         child: Card(
-                //           color: Colors.grey,
-                //           child: Column(
-                //             mainAxisAlignment: MainAxisAlignment.start,
-                //             crossAxisAlignment: CrossAxisAlignment.start,
-                //             children: const <Widget>[
-                //                Text(
-                //                 "Admin Expenses",
-                //                 style: TextStyle(
-                //                     fontWeight: FontWeight.bold,
-                //                     fontSize: 20),
-                //               )
-                //             ],
-                //           ),
-                //         ),
-                //       ),
-                //     )
-                //   ],
-                // ),
               ],
             ),
-            Center(
+            const Center(
               child: Text("It's rainy here"),
             ),
-            Center(
+            const Center(
               child: Text("It's sunny here"),
             ),
           ],

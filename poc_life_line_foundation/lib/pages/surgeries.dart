@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:poc_life_line_foundation/pages/signup.dart';
-import 'package:poc_life_line_foundation/widgets/app_bar.dart';
 
 class SurgeriesPage extends StatelessWidget {
   const SurgeriesPage({
@@ -16,7 +15,7 @@ class SurgeriesPage extends StatelessWidget {
           "Surgeries",
           style: TextStyle(color: Colors.purple),
         ),
-        actions: [Icon(Icons.health_and_safety_sharp)],
+        actions: const [Icon(Icons.health_and_safety_sharp)],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,6 +23,8 @@ class SurgeriesPage extends StatelessWidget {
         children: <Widget>[
           Image.network(
             "https://cdn.pixabay.com/photo/2016/12/05/19/49/syringe-1884784__480.jpg",
+            height: 120,
+            width: 320,
           ),
           const SizedBox(
             height: 10,
@@ -46,7 +47,7 @@ class SurgeriesPage extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const Textfield()))
+                                  builder: (context) => const SignUp()))
                         },
                         child: const Text(
                             'Registered Your Self Here!!                  >'),
@@ -55,7 +56,222 @@ class SurgeriesPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
+
+              SizedBox(
+                height: 400,
+                child: Card(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.network(
+                          "https://cdn.pixabay.com/photo/2022/12/24/18/49/outdoor-7676323__480.jpg"),
+                      const Text(
+                        "Support cat cochlear implant surgery",
+                        textAlign: TextAlign.end,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17.0,
+                        ),
+                      ),
+                      const LinearProgressIndicator(
+                        backgroundColor: Colors.red,
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                      ),
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 5,
+                              width: MediaQuery.of(context).size.width / 1.1,
+                              color: Colors.amber,
+                            )
+                          ]),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          const Icon(Icons.water_drop_outlined),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Text(
+                                "Rs.2,345,123",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "Required",
+                                style: TextStyle(color: Colors.grey),
+                              )
+                            ],
+                          ),
+                          const Icon(Icons.heart_broken),
+                          Column(
+                            children: const [
+                              Text(
+                                "Rs.0",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "Raised",
+                                style: TextStyle(color: Colors.grey),
+                              )
+                            ],
+                          ),
+                          const Icon(Icons.health_and_safety_outlined),
+                          Column(
+                            children: const [
+                              Text(
+                                "Rs.0",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "Supporters",
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => const SignUp()));
+                              },
+                              child: const Text(
+                                "Donate Now",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20),
+                              )),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const SignUp()));
+                            },
+                            child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: const [
+                                  Icon(Icons.screen_share_outlined),
+                                  SizedBox(
+                                    width: 4,
+                                  ),
+                                  Text(
+                                    'Share with your friends',
+                                  )
+                                ]),
+                            //  Text("Share")
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                child: Column(
+                  children: [
+                    Image.network(
+                        "https://cdn.pixabay.com/photo/2022/12/24/18/49/outdoor-7676323__480.jpg"),
+                    Row(
+                      children: const [
+                        Text(
+                          "Support cat cochlear implant surgery",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 17.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        const Icon(Icons.water_drop_outlined),
+                        Column(
+                          children: [
+                            const Text(
+                              "Rs.2,345,123",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Column(
+                              children: const [
+                                Text(
+                                  "Required",
+                                  style: TextStyle(color: Colors.grey),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                        const Icon(Icons.heart_broken),
+                        Column(
+                          children: [
+                            const Text(
+                              "Rs.0",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Column(
+                              children: const [
+                                Text(
+                                  "Raised",
+                                  style: TextStyle(color: Colors.grey),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                        const Icon(Icons.health_and_safety_outlined),
+                        Column(
+                          children: [
+                            const Text(
+                              "Rs.0",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            Column(
+                              children: const [
+                                Text(
+                                  "Supporters",
+                                  style: TextStyle(color: Colors.grey),
+                                )
+                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const SignUp()));
+                            },
+                            child: const Text(
+                              "Donate Now",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 20),
+                            )),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const SignUp()));
+                          },
+                          child: const Icon(Icons.screen_share_outlined),
+                          //  Text("Share")
+                        ),
+                        const Text(
+                          "Share with friends",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
 
               Container(
                 child: Card(
@@ -66,109 +282,7 @@ class SurgeriesPage extends StatelessWidget {
                       Row(
                         children: const [
                           Text(
-                            "Support cat cochlear implant surgery",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Icon(Icons.water_drop_outlined),
-                          Column(
-                            children: [
-                              const Text(
-                                "Rs.2,345,123",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              Column(
-                                children: const [
-                                  Text(
-                                    "Required",
-                                    style: TextStyle(color: Colors.grey),
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                          const Icon(Icons.heart_broken),
-                          Column(
-                            children: [
-                              const Text(
-                                "Rs.0",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              Column(
-                                children: const [
-                                  Text(
-                                    "Raised",
-                                    style: TextStyle(color: Colors.grey),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                          const Icon(Icons.health_and_safety_outlined),
-                          Column(
-                            children: [
-                              const Text(
-                                "Rs.0",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              Column(
-                                children: const [
-                                  Text(
-                                    "Supporters",
-                                    style: TextStyle(color: Colors.grey),
-                                  ),
-                                ],
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          ElevatedButton(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Textfield()));
-                              },
-                              child: Text(
-                                "Donate Now",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20),
-                              )),
-                          TextButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => Textfield()));
-                            },
-                            child: Icon(Icons.screen_share_outlined),
-                            //  Text("Share")
-                          ),
-                          Text(
-                            "Share with friends",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                child: Card(
-                  child: Column(
-                    children: [
-                      Image.network(
-                          "https://cdn.pixabay.com/photo/2022/12/24/18/49/outdoor-7676323__480.jpg"),
-                      Row(
-                        children: const [
-                          Text(
-                            "Support cat cochlear implant surgery",
+                            "Support Rashid cochlear implant surgery",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 17.0,
@@ -228,110 +342,6 @@ class SurgeriesPage extends StatelessWidget {
                                 ],
                               )
                             ],
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          TextButton(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Textfield()));
-                              },
-                              child: Text(
-                                "Donate Now",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20),
-                              )),
-                          TextButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => Textfield()));
-                            },
-                            child: Icon(Icons.screen_share_outlined),
-                            //  Text("Share")
-                          ),
-                          Text(
-                            "Share with friends",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
-
-              Container(
-                child: Card(
-                  child: Column(
-                    children: [
-                      Image.network(
-                          "https://cdn.pixabay.com/photo/2022/12/24/18/49/outdoor-7676323__480.jpg"),
-                      Row(
-                        children: const [
-                          Text(
-                            "Support Rashid cochlear implant surgery",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Icon(Icons.water_drop_outlined),
-                          Column(
-                            children: [
-                              const Text(
-                                "Rs.2,345,123",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              Column(
-                                children: const [
-                                  Text(
-                                    "Required",
-                                    style: TextStyle(color: Colors.grey),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                          Icon(Icons.heart_broken),
-                          Column(
-                            children: [
-                              const Text(
-                                "Rs.0",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              Column(
-                                children: const [
-                                  Text(
-                                    "Raised",
-                                    style: TextStyle(color: Colors.grey),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                          const Icon(Icons.health_and_safety_outlined),
-                          Column(
-                            children: [
-                              const Text(
-                                "Rs.0",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              Column(
-                                children: const [
-                                  Text(
-                                    "Supporters",
-                                    style: TextStyle(color: Colors.grey),
-                                  )
-                                ],
-                              )
-                            ],
                           ),
                         ],
                       ),
@@ -340,9 +350,9 @@ class SurgeriesPage extends StatelessWidget {
                           ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => Textfield()));
+                                    builder: (context) => const SignUp()));
                               },
-                              child: Text(
+                              child: const Text(
                                 "Donate Now",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 20),
@@ -350,12 +360,12 @@ class SurgeriesPage extends StatelessWidget {
                           TextButton(
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => Textfield()));
+                                  builder: (context) => const SignUp()));
                             },
-                            child: Icon(Icons.screen_share_outlined),
+                            child: const Icon(Icons.screen_share_outlined),
                             //  Text("Share")
                           ),
-                          Text(
+                          const Text(
                             "Share with friends",
                             style: TextStyle(fontWeight: FontWeight.bold),
                           )
