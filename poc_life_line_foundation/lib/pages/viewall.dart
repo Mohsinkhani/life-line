@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class view extends StatelessWidget {
   const view({super.key});
+  @override
   Widget build(BuildContext context) {
     var space = const SizedBox();
     return Scaffold(
@@ -15,7 +17,7 @@ class view extends StatelessWidget {
           Row(
             children: [
               Container(
-                child: Text(
+                child: const Text(
                   "1234",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                 ),
@@ -52,7 +54,7 @@ class view extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    child: Text(
+                    child: const Text(
                       "data",
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -61,7 +63,7 @@ class view extends StatelessWidget {
                     ),
                     height: 120,
                     width: 170,
-                    color: Color.fromARGB(255, 82, 12, 157),
+                    color: const Color.fromARGB(255, 82, 12, 157),
                   )
                 ],
               ),

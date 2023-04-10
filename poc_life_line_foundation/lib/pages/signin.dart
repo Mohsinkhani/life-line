@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:poc_life_line_foundation/pages/surgeries.dart';
 import 'package:poc_life_line_foundation/widgets/app_bar.dart';
 
 class StackUnderstanding extends StatefulWidget {
@@ -18,7 +17,7 @@ class _StackUnderstandingState extends State<StackUnderstanding> {
       // ),
       body: Stack(
         children: [
-          Container(
+          SizedBox(
             height: double.infinity,
             width: MediaQuery.of(context).size.width,
             child: Image.network(
@@ -31,7 +30,7 @@ class _StackUnderstandingState extends State<StackUnderstanding> {
             child: Container(
               height: 450.0,
               width: 400.0,
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: Card(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -77,14 +76,14 @@ class _StackUnderstandingState extends State<StackUnderstanding> {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => AppAndTabBarWidget()));
                         },
-                        child: Text("login"),
+                        child: const Text("login"),
                       ),
                       ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => AppAndTabBarWidget()));
                         },
-                        child: Text("signup"),
+                        child: const Text("signup"),
                       ),
                     ],
                   ),
@@ -95,7 +94,7 @@ class _StackUnderstandingState extends State<StackUnderstanding> {
           Positioned(
               top: 130,
               left: 120.0,
-              child: Container(
+              child: SizedBox(
                 height: 130.0,
                 width: 130.0,
                 //   color: Colors.black,
