@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:poc_life_line_foundation/pages/home.dart';
 import 'package:poc_life_line_foundation/pages/medical_camps.dart';
+import 'package:poc_life_line_foundation/pages/medical_prcedures.dart';
+import 'package:poc_life_line_foundation/pages/progressbar.dart';
 import 'package:poc_life_line_foundation/pages/surgeries.dart';
 
 void main() {
@@ -28,10 +30,12 @@ class MyApp extends StatelessWidget {
         ),
       ),
       routes: {
-        // When navigating to the "/" route, build the FirstScreen widget.
-        '/surgeries': (context) => const SurgeriesPage(),
-        // When navigating to the "/second" route, build the SecondScreen widget.
-        '/camps': (context) => const MedicalCamps(),
+        // '/': (context) => MyHomePage(
+        //       title: 'testi',
+        //     ),
+        '/page1': (context) => SurgeriesPage(),
+        '/page2': (context) => Camps(),
+        '/page3': (context) => MedicalProcedures(),
       },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );

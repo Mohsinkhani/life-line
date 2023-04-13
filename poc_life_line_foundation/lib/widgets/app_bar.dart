@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poc_life_line_foundation/pages/medical_camps.dart';
+import 'package:poc_life_line_foundation/pages/medical_prcedures.dart';
+import 'package:poc_life_line_foundation/pages/signup.dart';
 import 'package:poc_life_line_foundation/pages/viewall.dart';
 
 import '../pages/surgeries.dart';
@@ -44,14 +46,16 @@ class AppAndTabBarWidget extends StatelessWidget {
     {'amount': 1234, 'detail': 'surgeries'},
     {'amount': 1234, 'detail': 'surgeries'},
   ];
-  List<Route> myRoute = [
-    MaterialPageRoute(builder: (_) => SurgeriesPage()),
-    MaterialPageRoute(builder: (_) => MedicalCamps()),
-  ];
+
   AppAndTabBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final myRoute = [
+      'page1',
+      'page2',
+      'page3',
+    ];
     var space = const SizedBox(width: 10);
     return DefaultTabController(
       initialIndex: 0,
@@ -222,14 +226,8 @@ class AppAndTabBarWidget extends StatelessWidget {
                             width: MediaQuery.of(context).size.width,
                             child: InkWell(
                               onTap: () => {
-                                Navigator.of(context).push(myRoute[index]),
-
-                                // Navigator.push(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //       builder: (context) =>
-
-                                // )
+                                Navigator.pushNamed(
+                                    context, '/${myRoute[index]}'),
                               },
                               child: Card(
                                   color: colors[index],

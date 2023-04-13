@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:poc_life_line_foundation/widgets/app_bar.dart';
 
-class StackUnderstanding extends StatefulWidget {
-  const StackUnderstanding({Key? key}) : super(key: key);
+class Signin extends StatefulWidget {
+  const Signin({Key? key}) : super(key: key);
 
   @override
-  State<StackUnderstanding> createState() => _StackUnderstandingState();
+  State<Signin> createState() => _Signin();
 }
 
-class _StackUnderstandingState extends State<StackUnderstanding> {
+class _Signin extends State<Signin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
