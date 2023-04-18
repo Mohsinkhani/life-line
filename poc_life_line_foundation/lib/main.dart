@@ -34,8 +34,9 @@ class MyApp extends StatelessWidget {
         //       title: 'testi',
         //     ),
         '/page1': (context) => SurgeriesPage(),
-        '/page2': (context) => Camps(),
+        '/page2': (context) => MedicalCamps(),
         '/page3': (context) => MedicalProcedures(),
+        '/page4': (context) => Camps(),
       },
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:poc_life_line_foundation/pages/medical_camps.dart';
+import 'package:poc_life_line_foundation/pages/medical_prcedures.dart';
 import 'package:poc_life_line_foundation/pages/signup.dart';
 
 class SurgeriesPage extends StatelessWidget {
@@ -100,10 +102,8 @@ class SurgeriesPage extends StatelessWidget {
                           textStyle: const TextStyle(fontSize: 20),
                         ),
                         onPressed: () => {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const SignUp()))
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => SignUp()))
                         },
                         child: const Text(
                             'Registered Your Self Here!!                  >'),
@@ -133,7 +133,7 @@ class SurgeriesPage extends StatelessWidget {
                               Text(
                                 item['header']!,
                                 textAlign: TextAlign.end,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 17.0,
                                 ),

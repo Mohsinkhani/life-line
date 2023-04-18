@@ -55,6 +55,7 @@ class AppAndTabBarWidget extends StatelessWidget {
       'page1',
       'page2',
       'page3',
+      'page4',
     ];
     var space = const SizedBox(width: 10);
     return DefaultTabController(
@@ -100,9 +101,12 @@ class AppAndTabBarWidget extends StatelessWidget {
             children: [
               const DrawerHeader(
                 decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Text('Drawer Header'),
+                    color: Colors.blue,
+                    image: DecorationImage(
+                        image: NetworkImage(
+                            "https://media.licdn.com/dms/image/C4D0BAQFPOSpReN1BUA/company-logo_200_200/0/1659094180792?e=2147483647&v=beta&t=z7H_4mkjXJyC37Y4mGmWaat7FGelvdK2aeeaMWf7iTk"),
+                        fit: BoxFit.cover)),
+                child: Text(''),
                 // margin: EdgeInsets.all(10.10),
               ),
               ListTile(
