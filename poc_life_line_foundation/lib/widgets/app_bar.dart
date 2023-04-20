@@ -195,25 +195,26 @@ class AppAndTabBarWidget extends StatelessWidget {
                                   height: 50,
                                   width: 120,
                                   child: Card(
+                                      elevation: 3,
                                       child: Container(
-                                    padding: const EdgeInsets.all(8),
-                                    child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(
-                                            item['amount'].toString(),
-                                            style: const TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.green,
-                                            ),
-                                          ),
-                                          const Text('detail'),
-                                        ]),
-                                  )),
+                                        padding: const EdgeInsets.all(8),
+                                        child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: <Widget>[
+                                              Text(
+                                                item['amount'].toString(),
+                                                style: const TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.green,
+                                                ),
+                                              ),
+                                              const Text('detail'),
+                                            ]),
+                                      )),
                                 );
                               }),
                         )
