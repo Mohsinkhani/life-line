@@ -51,6 +51,48 @@ class MedicalCamps extends StatelessWidget {
       'raised': 'Raised',
     },
   ];
+  final completed = [
+    {
+      'completed': 'Completed',
+      'header': 'deserving patient in talagang need your support',
+      'currency1': 'RS.1000',
+      'currency2': 'Rs.1000',
+      'req': 'required',
+      'raised': 'Raised',
+    },
+    {
+      'completed': 'Completed',
+      'header': 'deserving patient in talagang need your support',
+      'currency1': 'RS.1000',
+      'currency2': 'Rs.1000',
+      'req': 'required',
+      'raised': 'Raised',
+    },
+    {
+      'completed': 'Completed',
+      'header': 'deserving patient in talagang need your support',
+      'currency1': 'RS.1000',
+      'currency2': 'Rs.1000',
+      'req': 'required',
+      'raised': 'Raised',
+    },
+    {
+      'completed': 'Completed',
+      'header': 'deserving patient in talagang need your support',
+      'currency1': 'RS.1000',
+      'currency2': 'Rs.1000',
+      'req': 'required',
+      'raised': 'Raised',
+    },
+    {
+      'completed': 'Completed',
+      'header': 'deserving patient in talagang need your support',
+      'currency1': 'RS.1000',
+      'currency2': 'Rs.1000',
+      'req': 'required',
+      'raised': 'Raised',
+    },
+  ];
   MedicalCamps({super.key, required this.upComing});
 
   @override
@@ -307,61 +349,213 @@ class MedicalCamps extends StatelessWidget {
 
                   /* DO the same process as for the upcomming */
 
-                  ListView(
-                    children: <Widget>[
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Row(
-                            children: [
-                              Card(
-                                child: Container(
-                                  height: 150,
-                                  width: 180,
-                                  color: Colors.amber,
+                  ListView.builder(
+                      itemCount: completed.length,
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (BuildContext context, int index) {
+                        final item = completed[index];
+                        return SizedBox(
+                            height: 160,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    InkWell(
+                                      onTap: () => {
+                                        Navigator.pushNamed(
+                                            context, '/${myRoute1[index]}')
+                                      },
+                                      child: Card(
+                                        child: Container(
+                                          height: 150,
+                                          width: 180,
+                                          decoration: BoxDecoration(
+                                              color: Color.fromRGBO(
+                                                  255, 255, 255, 1),
+                                              borderRadius:
+                                                  BorderRadius.circular(10)),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                margin: const EdgeInsets.only(
+                                                    top: 10),
+                                                width: 100,
+                                                decoration: const BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.only(
+                                                      bottomRight:
+                                                          Radius.circular(12),
+                                                      topRight:
+                                                          Radius.circular(12),
+                                                    ),
+                                                    color: Colors.green),
+                                                child: Text(
+                                                  item['completed'].toString(),
+                                                  style: TextStyle(
+                                                      color: Colors.white),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Container(
+                                                margin:
+                                                    EdgeInsets.only(left: 8),
+                                                child: Text(
+                                                  item['header'].toString(),
+                                                ),
+                                              ),
+                                              Container(
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width,
+                                                height: 5,
+                                                color: Colors.grey,
+                                                child: Container(
+                                                  width: 1,
+                                                  height: 5,
+                                                  color: Colors.green,
+                                                ),
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Column(
+                                                    children: [
+                                                      Text(item['currency1']
+                                                          .toString()),
+                                                      Text(
+                                                        item['req'].toString(),
+                                                        style: TextStyle(
+                                                            color: Colors.grey),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    children: [
+                                                      Text(item['currency2']
+                                                          .toString()),
+                                                      Text(
+                                                        item['raised']
+                                                            .toString(),
+                                                        style: TextStyle(
+                                                            color: Colors.grey),
+                                                      ),
+                                                    ],
+                                                  )
+                                                ],
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    InkWell(
+                                      onTap: () => {
+                                        Navigator.pushNamed(
+                                            context, '/${myRoute2[index]}')
+                                      },
+                                      child: Card(
+                                        child: Container(
+                                          height: 150,
+                                          width: 180,
+                                          decoration: BoxDecoration(
+                                              color: Color.fromRGBO(
+                                                  255, 255, 255, 1),
+                                              borderRadius:
+                                                  BorderRadius.circular(10)),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                margin: const EdgeInsets.only(
+                                                    top: 10),
+                                                width: 100,
+                                                decoration: const BoxDecoration(
+                                                    borderRadius:
+                                                        BorderRadius.only(
+                                                      bottomRight:
+                                                          Radius.circular(12),
+                                                      topRight:
+                                                          Radius.circular(12),
+                                                    ),
+                                                    color: Colors.green),
+                                                child: Text(
+                                                  item['completed'].toString(),
+                                                  style: TextStyle(
+                                                      color: Colors.white),
+                                                  textAlign: TextAlign.center,
+                                                ),
+                                              ),
+                                              Container(
+                                                margin:
+                                                    EdgeInsets.only(left: 8),
+                                                child: Text(
+                                                  item['header'].toString(),
+                                                ),
+                                              ),
+                                              Container(
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width,
+                                                height: 5,
+                                                color: Colors.grey,
+                                                child: Container(
+                                                  width: 1,
+                                                  height: 5,
+                                                  color: Colors.green,
+                                                ),
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Column(
+                                                    children: [
+                                                      Text(item['currency1']
+                                                          .toString()),
+                                                      Text(
+                                                        item['req'].toString(),
+                                                        style: TextStyle(
+                                                            color: Colors.grey),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    children: [
+                                                      Text(item['currency2']
+                                                          .toString()),
+                                                      Text(
+                                                        item['raised']
+                                                            .toString(),
+                                                        style: TextStyle(
+                                                            color: Colors.grey),
+                                                      ),
+                                                    ],
+                                                  )
+                                                ],
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Card(
-                                child: Container(
-                                  height: 150,
-                                  width: 180,
-                                  color: Colors.deepOrange,
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            children: [
-                              Card(
-                                child: Container(
-                                  height: 150,
-                                  width: 180,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Card(
-                                child: Container(
-                                  height: 150,
-                                  width: 180,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                              ],
+                            ));
+                      }),
                 ]))
 
                 // ````Container(

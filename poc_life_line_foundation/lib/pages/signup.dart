@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:poc_life_line_foundation/pages/medical_camps.dart';
-import 'package:poc_life_line_foundation/pages/progressbar.dart';
+import 'package:poc_life_line_foundation/pages/Expenses.dart';
 import 'package:poc_life_line_foundation/widgets/app_bar.dart';
 
 class SignUp extends StatefulWidget {
@@ -88,8 +88,8 @@ class _SignUpState extends State<SignUp> {
             const SizedBox(height: 30.0),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Camps()));
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => AdminExpenses()));
                 if (kDebugMode) {
                   print(email.text.toString());
                 }

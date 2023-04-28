@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:poc_life_line_foundation/pages/Sadaqah.dart';
+import 'package:poc_life_line_foundation/pages/Zakat.dart';
 import 'package:poc_life_line_foundation/pages/home.dart';
 import 'package:poc_life_line_foundation/pages/mcamp1.dart';
 import 'package:poc_life_line_foundation/pages/mcamp2.dart';
@@ -6,7 +8,7 @@ import 'package:poc_life_line_foundation/pages/mcamp3.dart';
 import 'package:poc_life_line_foundation/pages/mcamp4.dart';
 import 'package:poc_life_line_foundation/pages/medical_camps.dart';
 import 'package:poc_life_line_foundation/pages/medical_prcedures.dart';
-import 'package:poc_life_line_foundation/pages/progressbar.dart';
+import 'package:poc_life_line_foundation/pages/Expenses.dart';
 import 'package:poc_life_line_foundation/pages/surgeries.dart';
 
 void main() {
@@ -42,7 +44,10 @@ class MyApp extends StatelessWidget {
               upComing: [],
             ),
         '/page3': (context) => MedicalProcedures(),
-        '/page4': (context) => Camps(),
+        '/page4': (context) => AdminExpenses(),
+        '/page5': (context) => DonateZakat(),
+        '/page6': (context) => PaySadaqah(),
+
         '/test1': (context) => upcoming1(),
         '/test2': (context) => upcoming2(),
         '/test3': (context) => upcoming3(),
