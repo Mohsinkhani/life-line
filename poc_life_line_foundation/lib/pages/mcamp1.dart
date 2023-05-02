@@ -196,86 +196,31 @@ class upcoming1 extends StatelessWidget {
                         ),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
                             // Padding(padding: EdgeInsets.all(20)),
-                            Text(
-                              "athar",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                              textAlign: TextAlign.center,
+                            Column(
+                              children: [
+                                Text('data'),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text('data'),
+                                Text('data'),
+                              ],
                             ),
-                            SizedBox(
-                              width: 40,
-                            ),
-                            Text("    Anonymus",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold)),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text("Donated:",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                )),
-                            SizedBox(
-                              width: 40,
-                            ),
-                            Text("Donated:",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                )),
-                            SizedBox(
-                              height: 20,
+                            Column(
+                              children: [
+                                Text('data'),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text('data'),
+                                Text('data'),
+                              ],
                             ),
                           ],
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text("Rs.2222:",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                )),
-                            SizedBox(
-                              width: 40,
-                            ),
-                            Text("Rs.2222:",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                )),
-                            SizedBox(
-                              height: 20,
-                            ),
-                          ],
-                        ),
-
-                        // SizedBox(
-                        //   height: 40,
-                        // ),
-                        // Row(
-                        //   children: const [
-                        //     Text(
-                        //       "khan",
-                        //       style: TextStyle(
-                        //           color: Colors.white,
-                        //           fontWeight: FontWeight.bold),
-                        //       textAlign: TextAlign.center,
-                        //     ),
-                        //   ],
-                        // ),
-                        // Column(
-                        //   children: [
-                        //     Text("data"),
-                        //   ],
-                        // )
                       ],
                     ),
                   ),

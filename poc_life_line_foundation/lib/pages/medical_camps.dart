@@ -134,6 +134,9 @@ class MedicalCamps extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                // const TextField(
+                //     decoration: InputDecoration(
+                //         labelText: "Search", suffixIcon: Icon(Icons.search))),
                 Expanded(
                     child: TabBarView(children: <Widget>[
                   /* Todo: Convert the following listView to ListView.Builder and create

@@ -5,50 +5,33 @@ import 'package:poc_life_line_foundation/pages/signup.dart';
 import 'package:poc_life_line_foundation/pages/viewall.dart';
 
 import '../pages/surgeries.dart';
+import 'catagories_tab.dart';
 
 class data {}
 
 class AppAndTabBarWidget extends StatelessWidget {
   final int _index = 0;
 
-  var colors = [
-    Colors.red,
-    Colors.blue,
-    Colors.cyan,
-    Colors.green,
-    Colors.yellow,
-    Colors.cyan,
+  var design = [
+    Colors.grey[300],
+    Colors.grey[300],
+    Colors.grey[300],
   ];
-
-  final allCases = [
+  final list = [
     {
-      'name': 'Surgeries',
-    },
-    {
-      'name': 'Medical Camps',
+      'name': 'Surgical Procedure',
+      'info':
+          'there are the people whose live have been transformed with your donation!'
     },
     {
       'name': 'Medical Procedures',
+      'info': 'You have provided them better health and a brihtest future!'
     },
     {
-      'name': 'Expenses',
-    },
-    {
-      'name': 'Zakat',
-    },
-    {
-      'name': 'Pay Sadaqah',
-    },
-  ];
-
-  final achievements = [
-    {'amount': 1234, 'detail': 'surgeries'},
-    {'amount': 1234, 'detail': 'surgeries'},
-    {'amount': 1234, 'detail': 'surgeries'},
-    {'amount': 1234, 'detail': 'surgeries'},
-    {'amount': 1234, 'detail': 'surgeries'},
-    {'amount': 1234, 'detail': 'surgeries'},
-    {'amount': 1234, 'detail': 'surgeries'},
+      'name': 'Complelted Medical Camps',
+      'info':
+          'Thank you for giving a gift of healthcare to thousand of people across Pakistan!'
+    }
   ];
 
   AppAndTabBarWidget({super.key});
@@ -77,16 +60,25 @@ class AppAndTabBarWidget extends StatelessWidget {
           bottom: const TabBar(
             tabs: <Widget>[
               Tab(
-                child:
-                    Text('CATEGORIES', style: TextStyle(color: Colors.black)),
+                child: Text(
+                  'CATEGORIES',
+                  style: TextStyle(color: Colors.black, fontSize: 10),
+                  textAlign: TextAlign.center,
+                ),
               ),
               Tab(
-                child: Text('GENERAL DONATIONS',
-                    style: TextStyle(color: Colors.black)),
+                child: Text(
+                  'GENERAL DONATIONS',
+                  style: TextStyle(color: Colors.black, fontSize: 10),
+                  textAlign: TextAlign.center,
+                ),
               ),
               Tab(
-                child: Text('SUCCESS STORIES',
-                    style: TextStyle(color: Colors.black)),
+                child: Text(
+                  'SUCCESS STORIES',
+                  style: TextStyle(color: Colors.black, fontSize: 10),
+                  textAlign: TextAlign.center,
+                ),
               ),
             ],
           ),
@@ -168,96 +160,7 @@ class AppAndTabBarWidget extends StatelessWidget {
         ),
         body: TabBarView(
           children: <Widget>[
-            Column(
-              children: <Widget>[
-                Container(
-                    margin: const EdgeInsets.only(left: 10, right: 10),
-                    height: 150,
-                    child: Column(
-                      children: <Widget>[
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              const Text(
-                                'Achievement',
-                                style: TextStyle(fontSize: 25),
-                              ),
-                              TextButton(
-                                  onPressed: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const view()));
-                                  },
-                                  child: const Text('View All'))
-                            ]),
-                        Expanded(
-                          child: ListView.builder(
-                              itemCount: achievements.length,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (BuildContext context, int index) {
-                                final item = achievements[index];
-                                return SizedBox(
-                                  height: 50,
-                                  width: 120,
-                                  child: Card(
-                                      elevation: 3,
-                                      child: Container(
-                                        padding: const EdgeInsets.all(8),
-                                        child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.end,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: <Widget>[
-                                              Text(
-                                                item['amount'].toString(),
-                                                style: const TextStyle(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Colors.green,
-                                                ),
-                                              ),
-                                              const Text('detail'),
-                                            ]),
-                                      )),
-                                );
-                              }),
-                        )
-                      ],
-                    )),
-                Expanded(
-                  child: ListView.builder(
-                      itemCount: allCases.length,
-                      scrollDirection: Axis.vertical,
-                      itemBuilder: (BuildContext context, int index) {
-                        final item = allCases[index];
-                        return SizedBox(
-                            height: 150,
-                            width: MediaQuery.of(context).size.width,
-                            child: InkWell(
-                              onTap: () => {
-                                Navigator.pushNamed(
-                                    context, '/${myRoute[index]}'),
-                              },
-                              child: Card(
-                                  color: colors[index],
-                                  child: Container(
-                                    padding: const EdgeInsets.all(8),
-                                    child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Text(item['name']!)
-                                        ]),
-                                  )),
-                            ));
-                      }),
-                )
-              ],
-            ),
+            CatagoriesTab(),
             Center(
                 child: Stack(
               children: [
@@ -371,8 +274,85 @@ class AppAndTabBarWidget extends StatelessWidget {
                 )
               ],
             )),
-            const Center(
-              child: Text("It's sunny here"),
+            Container(
+              color: Colors.grey[300],
+              child: ListView.builder(
+                  itemCount: list.length,
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: (BuildContext context, int index) {
+                    final item = list[index];
+                    return SizedBox(
+                        height: 150,
+                        width: MediaQuery.of(context).size.width,
+                        child: InkWell(
+                          onTap: () => {
+                            Navigator.pushNamed(context, '/${myRoute[index]}'),
+                          },
+                          child: Card(
+                              elevation: 0,
+                              color: design[index],
+                              child: Container(
+                                width: MediaQuery.of(context).size.width,
+                                padding: const EdgeInsets.all(8),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: <Widget>[
+                                          Text(
+                                            item['name']!,
+                                            style: const TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Text(
+                                            item['info']!,
+                                            style: const TextStyle(
+                                                color: Colors.white),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.arrow_forward_ios,
+                                      color: Colors.green[400],
+                                    ),
+                                  ],
+                                ),
+                                // child: Column(
+                                //     mainAxisAlignment: MainAxisAlignment.start,
+                                //     crossAxisAlignment:
+                                //         CrossAxisAlignment.start,
+                                //     children: <Widget>[
+                                //       Text(
+                                //         item['name']!,
+                                //         style: const TextStyle(
+                                //             fontSize: 20,
+                                //             fontWeight: FontWeight.bold,
+                                //             color: Colors.white),
+                                //       ),
+                                //       SizedBox(
+                                //         height: 10,
+                                //       ),
+                                //       Text(
+                                //         item['info']!,
+                                //         style: const TextStyle(
+                                //             color: Colors.white),
+                                //       ),
+                                //     ]),
+                              )),
+                        ));
+                  }),
             ),
           ],
         ),
