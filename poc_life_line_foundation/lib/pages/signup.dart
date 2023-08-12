@@ -1,8 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:poc_life_line_foundation/pages/medical_camps.dart';
 import 'package:poc_life_line_foundation/pages/Expenses.dart';
-import 'package:poc_life_line_foundation/widgets/app_bar.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -10,6 +8,7 @@ class SignUp extends StatefulWidget {
   @override
   State<SignUp> createState() => _SignUpState();
 }
+// StreamBuilder
 
 class _SignUpState extends State<SignUp> {
   final email = TextEditingController();

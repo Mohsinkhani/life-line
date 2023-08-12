@@ -113,7 +113,7 @@ class AppAndTabBarWidget extends StatelessWidget {
                 onTap: () {
                   // Update the state of the app
                   // ...
-                  // Then close the drawer
+                  // Then close thedrawer
                   Navigator.pop(context);
                 },
               ),
